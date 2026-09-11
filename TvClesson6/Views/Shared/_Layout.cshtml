@@ -12,10 +12,12 @@
 	@Html.Partial("_TvCHeader")
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            <div class="col-md-3">@await Component.InvokeAsync("Category")</div>
+            <div class="col-md-9">@RenderBody() </div>
+            
         </main>
     </div>
-
+    @await Component.InvokeAsync("Category", new{n = 2})
 	@Html.Partial("_TvCFooter")
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
